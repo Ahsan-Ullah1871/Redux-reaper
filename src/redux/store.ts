@@ -1,14 +1,19 @@
 import { configureStore } from "@reduxjs/toolkit";
-import counterReducer from "./features/counter/counterSlice";
+import cartReducer from "./features/cart/cartSlice";
+import { Api } from "./api/apiSlice";
+import productReducer from "./features/product/productSlice";
 
 const store = configureStore({
 	reducer: {
-		count: counterReducer,
+		[Api.reducerPath]: Api.reducer,
+		cart: cartReducer,
+		product: productReducer,
 	},
+	middleware: (getDefaultMiddleware) =>
+		getDefaultMiddleware().concat(Api.middleware),
 });
-
-export default store;
 
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
 
+export default store;
