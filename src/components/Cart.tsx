@@ -12,7 +12,6 @@ import {
 	HiOutlineTrash,
 } from "react-icons/hi";
 import { Button } from "./ui/button";
-import { IProduct } from "@/types/globalTypes";
 import { useAppDispatch, useAppSelector } from "@/hooks/redxuHook";
 import {
 	decrease_item_from_cart,

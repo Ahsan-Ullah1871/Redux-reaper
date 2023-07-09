@@ -1,4 +1,3 @@
-import { IProduct } from "@/types/globalTypes";
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 

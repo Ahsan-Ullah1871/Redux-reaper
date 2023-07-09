@@ -11,9 +11,7 @@ export default function ProductDetails() {
 	const { id } = useParams();
 	const dispatch = useAppDispatch();
 
-	const { data, error, isLoading } = useGetProductDetailsQuery(
-		id as string
-	);
+	const { data } = useGetProductDetailsQuery(id as string);
 
 	const product: IProduct = data;
 

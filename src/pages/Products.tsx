@@ -2,7 +2,6 @@ import ProductCard from "@/components/ProductCard";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { Switch } from "@/components/ui/switch";
-import { useToast } from "@/components/ui/use-toast";
 import { useAppDispatch, useAppSelector } from "@/hooks/redxuHook";
 import { useGetProductsQuery } from "@/redux/api/apiSlice";
 import {
@@ -10,13 +9,10 @@ import {
 	status_filter,
 } from "@/redux/features/product/productSlice";
 import { IProduct } from "@/types/globalTypes";
-import { useEffect, useState } from "react";
 
 export default function Products() {
 	const dispatch = useAppDispatch();
-	const { data, error, isLoading } = useGetProductsQuery("");
-
-	const { toast } = useToast();
+	const { data } = useGetProductsQuery("");
 
 	//*filter
 	const { status, priceRange } = useAppSelector((state) => state.product);
