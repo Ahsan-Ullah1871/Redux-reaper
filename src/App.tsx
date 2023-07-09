@@ -1,17 +1,15 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
-import { RouterProvider } from "react-router-dom";
-import router from "./routes";
+import { Provider } from "react-redux";
+import { Toaster } from "./components/ui/Toaster";
+import MainLayout from "./layouts/MainLayout";
+import store from "./redux/store";
 
 function App() {
 	return (
-		<>
-			<RouterProvider router={router} />
-		</>
+		<Provider store={store}>
+			<Toaster />
+			<MainLayout />
+		</Provider>
 	);
 }
 
 export default App;
-
